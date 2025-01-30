@@ -7,10 +7,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: List all files
-        run: find . -type f
+        run: find . -type f -name "*.md"
       - name: Replace string in file
         run: |
-          find . -type f -exec sed -i 's/e/./g' {} +
+          find . -type f -name "*.md" -exec sed -i 's/e/./g' {} +
         # uses: MathieuSoysal/replace-string-in-file@v1.1.0
         # with:
         #   file: "**/*"
