@@ -55,7 +55,7 @@ visualizar el texto plano en forma gráfica.
 
 ### Parte 2: Implementación
 
-Crea la estructura de proyecto —C#— que corresponda. Recuerda que tienes los
+Crea la estructura de proyecto ‑C#‑ que corresponda. Recuerda que tienes los
 comandos que debes usar para esto explicados
 [aquí](https://github.com/ucudal/PII_Comandos/blob/master/Crear_Proyecto_C%23.md).
 
@@ -79,7 +79,7 @@ ejercicio dice así...
 
 Imagina que tienes que diseñar una puerta electrónica para un garaje, de forma
 que solo debe abrirse cuando se pulse una determinada combinación de botones
-—A, B y C—, según las condiciones indicadas. Diseña el circuito lógico que
+‑A, B y C‑, según las condiciones indicadas. Diseña el circuito lógico que
 permita la apertura de la puerta del garaje, empleando las puertas lógicas que
 consideres oportuno.
 
