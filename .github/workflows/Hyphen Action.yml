@@ -11,7 +11,7 @@ jobs:
       - name: Replace string in file
         uses: MathieuSoysal/replace-string-in-file@v1.1.0
         with:
-          file: "**/*.md"
+          file: "**/*"
           old-string: —
           new-string: x
 
