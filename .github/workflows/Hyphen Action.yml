@@ -4,10 +4,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "—"
           replace: "."
           regex: false
+          exclude: . # Do not modify this file
+      - name: Push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
