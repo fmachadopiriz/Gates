@@ -1,17 +1,34 @@
 name: Replace HYPHEN to NON-BREAKING HYPHEN
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+      - main
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v3
+      - name: Replace string in file
+        uses: MathieuSoysal/replace-string-in-file@v1.1.0
         with:
-          find: "—"
-          replace: "."
-          regex: false
-          exclude: . # Do not modify this file
-      - name: Push changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+          file: tests/test-file.txt
+          old-string: —
+          new-string: x
+
+# name: Replace HYPHEN to NON-BREAKING HYPHEN
+# on: [push, pull_request]
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v2
+#       - name: Find and Replace
+#         uses: jacobtomlinson/gha-find-replace@v3
+#         with:
+#           find: "—"
+#           replace: "."
+#           regex: false
+#           exclude: . # Do not modify this file
+#       - name: Push changes
+#         uses: stefanzweifel/git-auto-commit-action@v4
