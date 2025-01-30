@@ -7,11 +7,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Replace string in file
-        uses: MathieuSoysal/replace-string-in-file@v1.1.0
-        with:
-          file: "**/*"
-          old-string: "space"
-          new-string: "espacio"
+        run: |
+          find . -type f -exec sed -i 's/e/./g' {} +
+        # uses: MathieuSoysal/replace-string-in-file@v1.1.0
+        # with:
+        #   file: "**/*"
+        #   old-string: "space"
+        #   new-string: "espacio"
 
 # name: Replace HYPHEN to NON-BREAKING HYPHEN
 # on: [push, pull_request]
