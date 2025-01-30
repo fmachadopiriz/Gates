@@ -20,6 +20,8 @@ jobs:
         with:
           commit_message: "Replace hyphen with non-breaking hyphen"
           file_pattern: "*.md"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # uses: MathieuSoysal/replace-string-in-file@v1.1.0
         # with:
         #   file: "**/*"
