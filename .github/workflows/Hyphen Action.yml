@@ -6,6 +6,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: List all files
+        run: find . -type f
       - name: Replace string in file
         run: |
           find . -type f -exec sed -i 's/e/./g' {} +
