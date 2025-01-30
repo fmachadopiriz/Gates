@@ -4,10 +4,12 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Replace string in file
         uses: MathieuSoysal/replace-string-in-file@v1.1.0
         with:
-          file: "**/*.md"
+          file: "**/*"
           old-string: "space"
           new-string: "espacio"
 
