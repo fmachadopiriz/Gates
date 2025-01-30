@@ -1,4 +1,4 @@
-name: Replace HYPHEN to NON-BREAKING HYPHEN
+name: Replace HYPHEN with NON-BREAKING HYPHEN
 on: [push, pull_request]
 jobs:
   publish:
@@ -12,13 +12,13 @@ jobs:
       #   run: find . -type f -name "*.md" -exec cat {} +
       - name: Replace string in file
         run: |
-          find . -type f -name "*.md" -exec sed -i 's/e/./g' {} +
+          find . -type f -name "*.md" -exec sed -i 's/—/‑/g' {} +
       # - name: Display contents after replacement
       #   run: find . -type f -name "*.md" -exec cat {} +
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Replace hyphen with non-breaking hyphen"
+          commit_message: "Replaced — with ‑"
           file_pattern: "*.md"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
