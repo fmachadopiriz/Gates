@@ -8,8 +8,8 @@ jobs:
         uses: MathieuSoysal/replace-string-in-file@v1.1.0
         with:
           file: "**/*"
-          old-string: '—'
-          new-string: '.'
+          old-string: 'space'
+          new-string: 'x'
 
 # name: Replace HYPHEN to NON-BREAKING HYPHEN
 # on: [push, pull_request]
