@@ -6,15 +6,20 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: List all files
-        run: find . -type f -name "*.md"
-      - name: Display contents before replacement
-        run: find . -type f -name "*.md" -exec cat {} +
+      # - name: List all files
+      #   run: find . -type f -name "*.md"
+      # - name: Display contents before replacement
+      #   run: find . -type f -name "*.md" -exec cat {} +
       - name: Replace string in file
         run: |
           find . -type f -name "*.md" -exec sed -i 's/e/./g' {} +
-      - name: Display contents after replacement
-        run: find . -type f -name "*.md" -exec cat {} +
+      # - name: Display contents after replacement
+      #   run: find . -type f -name "*.md" -exec cat {} +
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Replace hyphen with non-breaking hyphen"
+          file_pattern: "*.md"
         # uses: MathieuSoysal/replace-string-in-file@v1.1.0
         # with:
         #   file: "**/*"
